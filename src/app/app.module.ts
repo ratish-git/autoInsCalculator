@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
 import { AppComponent } from './app.component';
 import { SteeperComponent } from './steeper/steeper.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -9,14 +9,12 @@ import { DemoMaterialModule } from './steeper/material-module';
 import { MatNativeDateModule } from '@angular/material/core';
 import { WeeklyComponent } from './weekly/weekly.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
-import { ForecastedComponent } from './forecasted/forecasted.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SteeperComponent,
     WeeklyComponent,
-    ForecastedComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +29,8 @@ import { ForecastedComponent } from './forecasted/forecasted.component';
     NgApexchartsModule
   ],
   schemas: [
-    CUSTOM_ELEMENTS_SCHEMA
+    CUSTOM_ELEMENTS_SCHEMA,
+    NO_ERRORS_SCHEMA
   ],
   providers:[SessionService],
   bootstrap: [AppComponent,SteeperComponent,WeeklyComponent]
