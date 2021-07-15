@@ -1,0 +1,81 @@
+<!-- <button mat-raised-button (click)="isEditable = !isEditable">
+  {{!isEditable ? 'Enable edit mode' : 'Disable edit mode'}}
+</button> -->
+
+<mat-stepper linear #stepper>
+    <!-- #docregion editable -->
+    <mat-step [stepControl]="firstFormGroup">
+      <!-- #enddocregion editable -->
+      <form [formGroup]="firstFormGroup" (ngSubmit)="checkVin()">
+        <!-- #docregion step-label -->
+        <ng-template matStepLabel>Enter your VIN</ng-template>
+        <!-- #enddocregion step-label -->
+        <mat-form-field appearance="fill">
+          <mat-label>Vehicle Identification Number</mat-label>
+          <input matInput formControlName="firstCtrl" placeholder="17 Digit Unique Number" required>
+        </mat-form-field>
+        <div>
+          <button mat-raised-button color="primary" matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup" (ngSubmit)="calculateInsurance()">
+        <ng-template matStepLabel>Enter miles Covered</ng-template>
+        <mat-form-field appearance="fill">
+          <mat-label>Km Reading(New)</mat-label>
+          <input matInput formControlName="secondCtrl" placeholder="Km" required>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Date of Premium</mat-label>
+          <input matInput [matDatepicker]="picker" [formControl]="date">
+          <mat-datepicker-toggle matSuffix [for]="picker">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Km Reading(Old)</mat-label>
+          <input matInput formControlName="secondOldCtrl" [(ngModel)]="oldReading" placeholder="Km" required readonly>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Last Reading Date</mat-label>
+          <input matInput [matDatepicker]="Oldpicker" [formControl]="oldDate" readonly> 
+          <mat-datepicker-toggle matSuffix [for]="Oldpicker">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #Oldpicker></mat-datepicker>
+        </mat-form-field>
+        <div>
+          <button mat-raised-button color="warn" matStepperPrevious>Back</button>
+          <button mat-raised-button color="primary" matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Confirm</ng-template>
+      <div *ngIf="inValidNewKm">
+        <h1 style="background-color:red;">New Km cannot be lesser than Old KM</h1>
+      </div>
+      <div *ngIf="!inValidNewKm">
+      <p><strong>Confirm Your details below and proceed for Payment</strong></p>
+      <p><strong>VIN number :</strong>{{vin}}</p>
+      <p><strong>Base Fare :</strong>{{basefare}} $</p>
+      <p><strong>Miles Covered this month :</strong>{{milesCovered}} km</p>
+      <p><strong>Total Amount payable :</strong>{{totalAmount}} $</p>
+      </div>
+      <div>
+        <button mat-raised-button color="warn" matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" matStepperNext>Pay Now</button>
+      </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>Payment Successfull. Thank You.</p>
+      <p>Your Auto Insurance is valid for 30 days.</p>
+      <div>
+        <button mat-raised-button color="primary" (click)="stepper.reset()">Done</button>
+      </div>
+    </mat-step>
+  </mat-stepper>

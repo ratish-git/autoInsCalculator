@@ -1,0 +1,14 @@
+.mat-stepper-horizontal {
+    margin-top: 8px;
+  }
+  
+  .mat-form-field {
+    margin-top: 16px;
+  }
+  
+  .details{
+    width: 100%;
+    background-size: cover;
+    color: rgb(9, 12, 187);
+    text-align: left;
+  }
