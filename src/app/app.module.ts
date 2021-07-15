@@ -7,11 +7,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { SessionService } from './session/session.service';
 import { DemoMaterialModule } from './steeper/material-module';
 import { MatNativeDateModule } from '@angular/material/core';
+import { WeeklyComponent } from './weekly/weekly.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { ForecastedComponent } from './forecasted/forecasted.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SteeperComponent
+    SteeperComponent,
+    WeeklyComponent,
+    ForecastedComponent
   ],
   imports: [
     BrowserModule,
@@ -23,11 +28,12 @@ import { MatNativeDateModule } from '@angular/material/core';
     DemoMaterialModule,
     MatNativeDateModule,
     ReactiveFormsModule,
+    NgApexchartsModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],
   providers:[SessionService],
-  bootstrap: [AppComponent,SteeperComponent]
+  bootstrap: [AppComponent,SteeperComponent,WeeklyComponent]
 })
 export class AppModule { }
