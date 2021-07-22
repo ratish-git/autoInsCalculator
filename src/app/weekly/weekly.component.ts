@@ -40,7 +40,7 @@ export class WeeklyComponent {
             },
             total: {
               show: true,
-              label: "Weekly(km)",
+              label: "Weekly Miles",
               formatter: function(w) {
                 return "249";
               }

@@ -12,6 +12,7 @@ import { NgApexchartsModule } from 'ng-apexcharts';
 import { ActualExpectedComponent } from './actual-expected/actual-expected.component';
 import { SpeedAnalysisComponent } from './speed-analysis/speed-analysis.component';
 import { DriversBehaviourComponent } from './drivers-behaviour/drivers-behaviour.component';
+import { VehicleScoreComponent } from './vehicle-score/vehicle-score.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { DriversBehaviourComponent } from './drivers-behaviour/drivers-behaviour
     ActualExpectedComponent,
     SpeedAnalysisComponent,
     DriversBehaviourComponent,
+    VehicleScoreComponent,
   ],
   imports: [
     BrowserModule,
