@@ -9,18 +9,17 @@
   <title>AutoInsuranceCalulator</title>
 </head>
 <div class="background">
-  <body class="mat-app-background">
-    <h1>Auto Insurance Calculator</h1>
-    <app-stepper></app-stepper>
-    <div class="highlights">
-      <h4>Highlights:</h4>
-      <h6>- A plug and play IOT device which can be installed into any device to measure the KM reading of a Car.<br>- A
-        proto that calculates premium of car based on the miles covered per month.<br>
-        - Registered VIN number can be used to calcluate the premium.<br>
-        - Premium is payable per month.<br>
-      - Premium Calulated is $3/km travelled and base fare of $ 35.</h6>
-    </div>
-    <app-weekly></app-weekly>
-  </body>
+<h1>Auto Insurance Calculator</h1>
+<app-stepper></app-stepper>
+<div *ngIf="vin">
+<mat-grid-list cols="2" rowHeight="4:2">
+  <h1>Car Analysis and Report</h1>
+  <mat-grid-tile><app-actual-expected>Loading</app-actual-expected></mat-grid-tile>
+  <mat-grid-tile><app-weekly>Loading</app-weekly></mat-grid-tile>
+  <mat-grid-tile><app-actual-expected>Loading</app-actual-expected></mat-grid-tile>
+  <mat-grid-tile><app-weekly>Loading</app-weekly></mat-grid-tile>
+</mat-grid-list>
 </div>
+</div>
+
 </html>

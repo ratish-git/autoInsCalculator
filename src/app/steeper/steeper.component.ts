@@ -49,6 +49,11 @@ export class SteeperComponent implements OnInit {
     });
   }
 
+  setVin(){
+    this.firstFormGroup.controls.firstCtrl.setValue("VIN-CN-0003-QC");
+    this.storage.storeSession('vin', "VIN-CN-0003-QC");
+  }
+
   checkVin() {
     console.log('Firstform---' + this.firstFormGroup.controls.firstCtrl.value);
 

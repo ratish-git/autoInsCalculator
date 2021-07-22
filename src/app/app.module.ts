@@ -9,12 +9,14 @@ import { DemoMaterialModule } from './steeper/material-module';
 import { MatNativeDateModule } from '@angular/material/core';
 import { WeeklyComponent } from './weekly/weekly.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { ActualExpectedComponent } from './actual-expected/actual-expected.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SteeperComponent,
     WeeklyComponent,
+    ActualExpectedComponent,
   ],
   imports: [
     BrowserModule,
