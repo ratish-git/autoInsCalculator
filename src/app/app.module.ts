@@ -10,6 +10,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { WeeklyComponent } from './weekly/weekly.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { ActualExpectedComponent } from './actual-expected/actual-expected.component';
+import { SpeedAnalysisComponent } from './speed-analysis/speed-analysis.component';
+import { DriversBehaviourComponent } from './drivers-behaviour/drivers-behaviour.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { ActualExpectedComponent } from './actual-expected/actual-expected.compo
     SteeperComponent,
     WeeklyComponent,
     ActualExpectedComponent,
+    SpeedAnalysisComponent,
+    DriversBehaviourComponent,
   ],
   imports: [
     BrowserModule,
