@@ -26,7 +26,7 @@
         <ng-template matStepLabel>Enter miles Covered</ng-template>
         <mat-form-field appearance="fill">
           <mat-label>Km Reading(New)</mat-label>
-          <input matInput formControlName="secondCtrl" placeholder="Km" required>
+          <input matInput formControlName="secondCtrl" placeholder="Km" [(ngModel)]="newReading" required>
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Date of Premium</mat-label>
@@ -57,17 +57,17 @@
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Confirm</ng-template>
-      <div *ngIf="inValidNewKm">
+      <!-- <div *ngIf="inValidNewKm">
         <h1 style="background-color:red;">New Km cannot be lesser than Old KM</h1>
       </div>
-      <div *ngIf="!inValidNewKm">
+      <div *ngIf="!inValidNewKm"> -->
       <p><strong>Confirm Your details below and proceed for Payment</strong></p>
       <p><strong>VIN number :</strong>{{vin}}</p>
       <p><strong>Base Fare :</strong>{{basefare}} $</p>
       <p><strong>Auto Analysis Score is :</strong>76/100</p>
       <p><strong>Miles Covered this month :</strong>{{milesCovered}} km</p>
       <p><strong>Total Amount payable :</strong>{{totalAmount}} $</p>
-      </div>
+      <!-- </div> -->
       <div>
         <button mat-raised-button color="warn" matStepperPrevious>Back</button>
         <button mat-raised-button color="primary" matStepperNext>Pay Now</button>

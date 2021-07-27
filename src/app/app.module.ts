@@ -13,6 +13,8 @@ import { ActualExpectedComponent } from './actual-expected/actual-expected.compo
 import { SpeedAnalysisComponent } from './speed-analysis/speed-analysis.component';
 import { DriversBehaviourComponent } from './drivers-behaviour/drivers-behaviour.component';
 import { VehicleScoreComponent } from './vehicle-score/vehicle-score.component';
+import { TimelineComponent } from './timeline/timeline.component';
+import { NgxVerticalTimelineModule } from 'ngx-vertical-timeline';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { VehicleScoreComponent } from './vehicle-score/vehicle-score.component';
     SpeedAnalysisComponent,
     DriversBehaviourComponent,
     VehicleScoreComponent,
+    TimelineComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ import { VehicleScoreComponent } from './vehicle-score/vehicle-score.component';
     DemoMaterialModule,
     MatNativeDateModule,
     ReactiveFormsModule,
-    NgApexchartsModule
+    NgApexchartsModule,
+    NgxVerticalTimelineModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,

@@ -56,6 +56,10 @@ export class SteeperComponent implements OnInit {
 
   checkVin() {
     console.log('Firstform---' + this.firstFormGroup.controls.firstCtrl.value);
+    this.storage.storeSession('oldReading', 1223);
+    this.oldReading = this.storage.getFromSession('oldReading');
+    this.storage.storeSession('newReading', 1700);
+    this.newReading = this.storage.getFromSession('newReading');
 
     this.autoInsService
       .getOldReadingByVinNumberUsingGET(
