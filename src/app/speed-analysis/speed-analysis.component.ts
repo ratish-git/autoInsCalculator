@@ -35,7 +35,7 @@ export class SpeedAnalysisComponent implements OnInit {
     this.chartOptions = {
       series: [
         {
-          name: "Accelerometer",
+          name: "Speed-o-meter",
           data: [0, 10, 68, 55, 100, 50, 0]
         },
         {

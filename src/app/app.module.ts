@@ -25,7 +25,7 @@ import { NgxVerticalTimelineModule } from 'ngx-vertical-timeline';
     SpeedAnalysisComponent,
     DriversBehaviourComponent,
     VehicleScoreComponent,
-    TimelineComponent,
+    TimelineComponent
   ],
   imports: [
     BrowserModule,
