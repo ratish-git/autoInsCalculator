@@ -8,7 +8,7 @@ import { TimelineItem } from 'ngx-vertical-timeline';
 })
 export class TimelineComponent {
   items: TimelineItem[] = [];
-  externalVariable = 'hello';
+  externalVariable = 'Will Contact you soon';
   ngOnInit() {
     const self = this;
 
